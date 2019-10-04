@@ -1,0 +1,93 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  height: 70px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #032973;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0em;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover {
+  opacity: 0.8;
+}
+
+
+.material-icons {
+  color: white;
+  margin: 1em;
+}
+
+.fa-sign-out {
+  text-align: center;
+  font-size: 30px;
+  margin-right: 0.5em;
+}
+
+/**** CONTENT ***/
+
+.titleContent {
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+}
+
+.example-container {
+  width: 100%;
+  height: 100%;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+
+.example-sidenav {
+  padding: 20px;
+
+}
+
+mat-card {
+  margin-bottom: 1em;
+  padding: 2em;
+  font-size: 1vw;
+  letter-spacing: 0.5px;
+}

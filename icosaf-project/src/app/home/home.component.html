@@ -1,0 +1,52 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <i class="material-icons" (click)="drawer.toggle()">
+    dehaze
+  </i>
+  <span><h4>ICOSAF</h4></span>
+  <div class="spacer"></div>
+  <button type="button" class="btn btn-warning" (click)="grafana()">Grafana</button>
+
+  <div class="spacer"></div>
+  <i id="notification" class="material-icons">
+    notifications_active
+  </i>
+  <i (click)="logout()"
+     class="fa fa-sign-out"></i>
+
+
+</div>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+    <mat-card tabindex="0" (click)="changeContent('AGV Omron + Cobot Omron con visione 2D (3D)')">AGV Omron + Cobot
+      Omron con visione 2D (3D)
+    </mat-card>
+    <mat-card tabindex="0" (click)="changeContent('Cobot Omron con visione 2D (3D)')">Cobot Omron con visione 2D (3D)
+    </mat-card>
+    <mat-card tabindex="0" (click)="changeContent('AGV Comau')">AGV Comau
+    </mat-card>
+    <mat-card tabindex="0" (click)="changeContent('Cobot Kuka')">Cobot Kuka
+    </mat-card>
+    <mat-card tabindex="0" (click)="changeContent('Plc Gestione Linea')">Plc Gestione Linea
+    </mat-card>
+    <mat-card tabindex="0" (click)="changeContent('AGV Comau Prova')">AGV Comau Prova</mat-card>
+    <mat-card tabindex="0" (click)="changeContent('AGV Comau Prova2')">AGV Comau Prova2</mat-card>
+    <mat-card tabindex="0" (click)="changeContent('AGV Comau Prova3')">AGV Comau Prova3</mat-card>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+
+    <div class="titleContent">
+      <h2>{{title}}</h2>
+    </div>
+  </div>
+
+
+</mat-drawer-container>
+
+
+
+
+
+
+
