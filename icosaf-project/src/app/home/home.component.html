@@ -1,16 +1,34 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <i class="material-icons" (click)="drawer.toggle()">
+  <img
+
+    alt="Icosaf Logo"
+    src="assets/icosaf.jpg"
+  />
+  <i id="left_menu" class="material-icons" (click)="drawer.toggle()">
     dehaze
   </i>
-  <span><h4>ICOSAF</h4></span>
+
+
   <div class="spacer"></div>
   <button type="button" class="btn btn-warning" (click)="grafana()">Grafana</button>
 
   <div class="spacer"></div>
-  <i id="notification" class="material-icons">
+
+  <i class="material-icons">
+    show_chart
+  </i>
+
+  <i class="material-icons" matBadge="15" matBadgeColor="warn" [matMenuTriggerFor]="menu">
     notifications_active
   </i>
+
+  <mat-menu #menu="matMenu">
+    <button *ngFor="let n of notifications" mat-menu-item>
+      <!--<mat-icon>dialpad</mat-icon>-->
+      <span>{{n}} text text text</span>
+    </button>
+  </mat-menu>
   <i (click)="logout()"
      class="fa fa-sign-out"></i>
 
@@ -35,13 +53,10 @@
     <mat-card tabindex="0" (click)="changeContent('AGV Comau Prova3')">AGV Comau Prova3</mat-card>
   </mat-drawer>
   <div class="example-sidenav-content">
-
     <div class="titleContent">
       <h2>{{title}}</h2>
     </div>
   </div>
-
-
 </mat-drawer-container>
 
 

@@ -3,8 +3,7 @@
   font-size: 14px;
   color: #333;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 h1,
@@ -31,25 +30,17 @@ p {
   align-items: center;
   background-color: #032973;
   color: white;
+  padding: 0;
 }
+
 
 img {
+  margin-top: 5px;
   height: auto;
   width: auto;
-  max-height: 50px;
+  max-height: 66px;
   max-width: 250px;
-  margin-left: 0.7em;
 }
-
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover {
-  opacity: 0.8;
-}
-
 
 .material-icons {
   color: white;
@@ -57,9 +48,7 @@ img {
   font-size: 2.3vh;
 }
 
-#left_menu {
-  margin-left: 0.7em;
-}
+
 
 .fa-sign-out {
   text-align: center;
@@ -67,11 +56,7 @@ img {
   margin-right: 0.5em;
 }
 
-.fa-chart-bar {
-  color: white;
-  margin: 1em;
-  font-size: 5vh;
-}
+
 
 
 
@@ -100,9 +85,4 @@ img {
 
 }
 
-mat-card {
-  margin-bottom: 1em;
-  padding: 2em;
-  font-size: 1vw;
-  letter-spacing: 0.5px;
-}
+

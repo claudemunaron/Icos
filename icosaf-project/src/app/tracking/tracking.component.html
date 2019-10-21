@@ -1,0 +1,35 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    alt="dwin Logo"
+    src="assets/dtwin.png"
+  />
+  <div class="spacer"></div>
+
+  <i (click)="logout()"
+     class="fa fa-sign-out">
+  </i>
+</div>
+
+<div class="example-sidenav-content">
+  <div class="titleContent">
+    <p>Tracking</p>
+    <div> <!-- scatter chart -->
+      <canvas baseChart
+              [datasets]="scatterChartData"
+              [options]="scatterChartOptions"
+              [chartType]="scatterChartType">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

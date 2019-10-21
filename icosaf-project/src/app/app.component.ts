@@ -1,6 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatDrawer} from "@angular/material";
-import {agvModel} from "../model/agvModel";
+import {Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -12,5 +11,4 @@ export class AppComponent {
 
   constructor() {}
 
-  ngOnInit() {}
 }
