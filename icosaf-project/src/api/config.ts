@@ -4,5 +4,5 @@
 export default {
 
   dataLogin: 'http://www.mocky.io/v2/5d934c0330000051001b73c1',
-  data: 'http://www.mocky.io/v2/5da98aff3100006a004e0969'
+  data: 'http://digitwin.cloud.reply.eu:8080/api/2/things/smart%3Adtwin_lwb'
 };

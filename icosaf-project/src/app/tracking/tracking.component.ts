@@ -29,7 +29,11 @@ export class TrackingComponent implements OnInit {
   /*Scatter chart*/
 
   public scatterChartOptions: ChartOptions = {
-    responsive: true,
+   // responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
     scales: {
       yAxes: [{
         display: true,
@@ -92,7 +96,7 @@ export class TrackingComponent implements OnInit {
   }
 
   updateData() {
-    interval(8000)
+    interval(3000)
       .pipe(
         startWith(0),
         switchMap(() => this.agv.digitalTwin())
@@ -100,7 +104,7 @@ export class TrackingComponent implements OnInit {
       .subscribe(
         res => {
           this.data = res;
-          this.position = this.data[0].features.position.properties;
+          this.position = this.data.features.position.properties;
 
           /*const x = this.randomInt(0, 100);
           const y = this.randomInt(0, 100);

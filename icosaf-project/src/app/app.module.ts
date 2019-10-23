@@ -17,6 +17,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import {AgvServiceService} from '../api/agv-service.service';
 import {ChartsModule} from 'ng2-charts';
 import { TrackingComponent } from './tracking/tracking.component';
+import { WmsInsertDataComponent } from './wms-insert-data/wms-insert-data.component';
+import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { TrackingComponent } from './tracking/tracking.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    TrackingComponent
+    TrackingComponent,
+    WmsInsertDataComponent,
+    WmsGetDataComponent
   ],
   imports: [
     BrowserModule,
