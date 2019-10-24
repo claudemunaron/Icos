@@ -29,7 +29,7 @@ export class TrackingComponent implements OnInit {
   /*Scatter chart*/
 
   public scatterChartOptions: ChartOptions = {
-   // responsive: true,
+    responsive: true,
     maintainAspectRatio: false,
     legend: {
       display: false
