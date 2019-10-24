@@ -1,6 +1,6 @@
 // some.component.ts
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AgvModel} from '../../model/AgvModel';
+
 import {MatDrawer} from '@angular/material';
 import {Router} from '@angular/router';
 import {AgvServiceService} from '../../api/agv-service.service';
@@ -16,9 +16,6 @@ import {startWith, switchMap} from 'rxjs/operators';
   styleUrls: ['./tracking.component.scss']
 })
 export class TrackingComponent implements OnInit {
-
-  agvList: AgvModel[];
-
   @ViewChild('drawer', {static: null}) drawer: MatDrawer;
   @ViewChild(BaseChartDirective, {static: null}) lineChart: BaseChartDirective;
 
