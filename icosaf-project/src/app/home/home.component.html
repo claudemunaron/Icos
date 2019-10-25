@@ -11,11 +11,11 @@
 
 
   <div class="spacer"></div>
-  <button type="button" class="btn btn-warning" (click)="grafana()">Grafana</button>
+  <!--<button type="button" class="btn btn-warning" (click)="grafana()">Grafana</button>-->
 
   <div class="spacer"></div>
 
-  <i class="material-icons">
+  <i class="material-icons" (click)="grafana()">
     show_chart
   </i>
 
@@ -54,7 +54,7 @@
   </mat-drawer>
   <div class="example-sidenav-content">
     <div class="titleContent">
-      <h2>{{title}}</h2>
+      <p>{{title}}</p>
     </div>
   </div>
 </mat-drawer-container>

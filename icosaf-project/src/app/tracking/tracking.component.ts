@@ -79,11 +79,6 @@ export class TrackingComponent implements OnInit {
   }
 
 
-  randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-
   /*Chart - aggiungere  al grafico */
 
   addData(data) {
@@ -103,10 +98,6 @@ export class TrackingComponent implements OnInit {
           this.data = res;
           this.position = this.data.features.position.properties;
 
-          /*const x = this.randomInt(0, 100);
-          const y = this.randomInt(0, 100);
-          const z = 0;*/
-
           const x = this.position.x;
           const y = this.position.y;
           const z = this.position.z;
@@ -123,6 +114,17 @@ export class TrackingComponent implements OnInit {
   checkDuplicate(x, y) {
     return this.chartData.some(e => e.x === x && e.y === y);
   }
+
+
+
+  refreshPath() {
+    this.lineChart.chart.data.datasets.forEach((dataset) => {
+      dataset.data = [];
+      this.chartData = [];
+
+    });
+  }
+
 
 }
 

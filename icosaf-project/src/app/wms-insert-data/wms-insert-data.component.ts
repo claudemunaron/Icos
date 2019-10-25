@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AgvServiceService} from '../../api/agv-service.service';
 
 @Component({
   selector: 'app-wms-insert-data',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wms-insert-data.component.scss']
 })
 export class WmsInsertDataComponent implements OnInit {
+  partNumber = '';
+  amount: number;
+  descr = '';
 
-  constructor() { }
+  constructor(private agv: AgvServiceService) { }
 
   ngOnInit() {
+  }
+
+  insertPartnumber() {
+   this.agv.newFile(this.partNumber, this.descr, this.amount).subscribe(data => {
+   console.log(data);
+   });
+
   }
 
 }

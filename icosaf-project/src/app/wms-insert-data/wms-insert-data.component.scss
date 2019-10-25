@@ -1,19 +1,27 @@
 .form-style-6{
-  font: 95% Arial, Helvetica, sans-serif;
-  max-width: 700px;
+
+  max-width: 500px;
   margin: 10px auto;
   padding: 16px;
   background: #F7F7F7;
+  border-radius: 15px;
+  text-align: right;
+
+
+
 }
 .form-style-6 h1{
   background: #508BBF;
   padding: 20px 0;
-  font-size: 140%;
+  font-size: 100%;
   font-weight: bolder;
   text-align: center;
   letter-spacing: 1px;
   color: #fff;
   margin: -16px -16px 16px -16px;
+  border-radius: 5px;
+
+
 }
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
@@ -38,9 +46,10 @@
   background: #fff;
   margin-bottom: 4%;
   border: 1px solid #ccc;
-  padding: 3%;
+  padding: 2.5%;
   color: #555;
-  font: 95% Arial, Helvetica, sans-serif;
+
+  border-radius: 10px;
 }
 .form-style-6 input[type="text"]:focus,
 .form-style-6 input[type="date"]:focus,
@@ -58,21 +67,30 @@
   border: 1px solid #508BBF;
 }
 
-.form-style-6 input[type="submit"],
+
 .form-style-6 input[type="button"]{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  width: 100%;
-  padding: 3%;
+  padding: 2%;
   background: #43D1AF;
   border-bottom: 2px solid #30C29E;
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
   color: #fff;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  border-radius: 7px;
+  width: 20%;
+
+
 }
-.form-style-6 input[type="submit"]:hover,
+
 .form-style-6 input[type="button"]:hover{
   background: #2EBC99;
+}
+
+.descrArea {
+  min-height: 200px;
 }

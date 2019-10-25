@@ -10,5 +10,7 @@
 @import url("https://unpkg.com/angular-notifier@2.0.0/styles.css");
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
-html, body { height: 100%; width: 100%}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; width: 100%;
+  font-size: 16px;
+  font-size-adjust:0.5;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;    text-rendering:optimizelegibility; }

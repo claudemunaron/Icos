@@ -25,8 +25,9 @@ p {
 }
 
 .toolbar {
-  height: 70px;
-  margin: -8px;
+  height: 50px;
+  margin: -3px;
+  padding: -5em;
   display: flex;
   align-items: center;
   background-color: #032973;
@@ -36,9 +37,9 @@ p {
 img {
   height: auto;
   width: auto;
-  max-height: 50px;
+  max-height: 35px;
   max-width: 250px;
-  margin-left: 0.7em;
+  margin-left: 0.5em;
 }
 
 .toolbar #twitter-logo {
@@ -59,12 +60,13 @@ img {
 
 #left_menu {
   margin-left: 0.7em;
+  font-size: 2.5vh;
 }
 
 .fa-sign-out {
   text-align: center;
-  font-size: 30px;
-  margin-right: 0.5em;
+  font-size: 2.5vh;
+  margin-right: 0.6em;
 }
 
 .fa-chart-bar {
