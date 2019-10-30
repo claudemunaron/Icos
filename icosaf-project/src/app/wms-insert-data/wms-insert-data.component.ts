@@ -17,10 +17,9 @@ export class WmsInsertDataComponent implements OnInit {
   }
 
   insertPartnumber() {
-   this.agv.newFile(this.partNumber, this.descr, this.amount).subscribe(data => {
+   this.agv.insert(this.partNumber, this.descr, this.amount).subscribe(data => {
    console.log(data);
    });
 
   }
-
 }

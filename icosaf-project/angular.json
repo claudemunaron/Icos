@@ -29,10 +29,11 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "../icosaf-project/node_modules/font-awesome/scss/font-awesome.scss"
             ],
             "scripts": [
-              "node_modules/apexcharts/dist/apexcharts.min.js"
+
             ]
           },
           "configurations": {

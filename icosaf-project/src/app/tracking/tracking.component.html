@@ -5,7 +5,6 @@
     src="assets/dtwin.png"
   />
   <div class="spacer"></div>
-
   <i (click)="logout()"
      class="fa fa-sign-out">
   </i>
@@ -14,14 +13,13 @@
 <div class="example-sidenav-content">
   <div class="titleContent">
     <p>Tracking</p>
-    <div class = "carttrack"> <!-- scatter chart -->
+    <div class="carttrack"> <!-- scatter chart -->
       <canvas baseChart
               [datasets]="scatterChartData"
               [options]="scatterChartOptions"
               [chartType]="scatterChartType">
       </canvas>
       <button type="button" class="btn btn-outline-info  refresh" (click)="refreshPath()">Refresh path</button>
-
     </div>
   </div>
 </div>

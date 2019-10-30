@@ -1,1 +1,17 @@
-<p>wms-get-data works!</p>
+<div class="form-style-6 yui3-normalized">
+  <h1 class="yui3-normalized">Amount</h1>
+
+  <mat-form-field>
+    <mat-label>Select Partnumber</mat-label>
+    <mat-select  [(ngModel)]="selectedPartNumber" (ngModelChange)="getAmount()">
+      <mat-option *ngFor="let d of details" [value]="d.det_short_id">
+        {{d.det_short_id}}</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+
+  <input type="text" name="field2" placeholder="Amount" [(ngModel)]="amountResponse"/>
+
+  <input type="button" value="Edit"  (click)="insertPartnumber()"/>
+</div>

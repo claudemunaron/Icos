@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {TrackingComponent} from './tracking/tracking.component';
 import {WmsGetDataComponent} from './wms-get-data/wms-get-data.component';
 import {WmsInsertDataComponent} from './wms-insert-data/wms-insert-data.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class AppRoutingModule { }

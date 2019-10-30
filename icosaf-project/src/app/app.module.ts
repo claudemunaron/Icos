@@ -10,7 +10,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import {MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatBadgeModule,
+  MatSelectModule
+} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule} from '@angular/material/menu';
@@ -19,6 +27,8 @@ import {ChartsModule} from 'ng2-charts';
 import { TrackingComponent } from './tracking/tracking.component';
 import { WmsInsertDataComponent } from './wms-insert-data/wms-insert-data.component';
 import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 
 @NgModule({
@@ -46,11 +56,13 @@ import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
     MatMenuModule,
     MatIconModule,
     MatBadgeModule,
-    ChartsModule
+    ChartsModule,
+    AngularFontAwesomeModule,
+    MatSelectModule
 
 
   ],
-  providers: [AgvServiceService],
+  providers: [AgvServiceService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 import {default as config} from './config';
@@ -39,31 +39,16 @@ export class AgvServiceService {
 
     return this.http.get(config.data, httpOptions)
       .pipe(
-        tap(data => {this.data = data; })
+        tap(data => {
+          this.data = data;
+        })
       );
   }
 
-  insertPartNumber(detShortId, descr, am) {
+
+  insert(detShortId, descr, am): Observable<any> {
     const content = {
-      det_short_id:  '' + detShortId,
-      description: '' + descr,
-      amount: am
-    };
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-
-    return this.http.post('http://10.41.11.152:8080/Details/insertRecord', content, httpOptions).pipe(
-      tap(data => console.log(data))
-    );
-
-  }
-
-  newFile(detShortId, descr, am): Observable<any> {
-    const content = {
-      det_short_id:  '' + detShortId,
+      det_short_id: '' + detShortId,
       description: '' + descr,
       amount: am
     };
@@ -74,10 +59,47 @@ export class AgvServiceService {
       })
     };
 
-    return this.http.post<any>('http://10.41.11.152:8080/Details/insertRecord', content, httpOptions).pipe(
-      tap(data => {console.log(JSON.stringify(data)); this.data = data; }),
+    return this.http.post<any>(config.insert, content, httpOptions).pipe(
+      tap(data => {
+        console.log(JSON.stringify(data));
+        this.data = data;
+      }),
       catchError(this.errorHandler)
     );
   }
+
+
+  getList() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.get(config.details, httpOptions)
+      .pipe(
+        tap(data => {
+          this.data = data;
+        })
+      );
+  }
+
+  getAmount(partNumber) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+
+    };
+
+    return this.http.get(config.amount + '' + partNumber.toString(), httpOptions)
+      .pipe(
+        tap(data => {
+          this.data = data;
+        })
+      );
+
+  }
+
 
 }
