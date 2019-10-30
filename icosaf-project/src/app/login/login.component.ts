@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
 
   checkAccess() {
     if ('success' === this.responseLogin.login) {
-      this.router.navigate(['/Home', {}]);
+      this.router.navigate(['/IcosafHome', {}]);
     } else {
       this.unauthorized = true;
     }

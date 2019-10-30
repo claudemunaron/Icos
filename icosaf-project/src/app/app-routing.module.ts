@@ -6,7 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {TrackingComponent} from './tracking/tracking.component';
 import {WmsGetDataComponent} from './wms-get-data/wms-get-data.component';
 import {WmsInsertDataComponent} from './wms-insert-data/wms-insert-data.component';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {IcosafMenuComponent} from './icosaf-menu/icosaf-menu.component';
 
 
 const routes: Routes = [
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'Tracking', component: TrackingComponent},
   { path: 'WmsInsert', component: WmsInsertDataComponent},
   { path: 'WmsGet', component: WmsGetDataComponent},
+  { path: 'IcosafHome', component: IcosafMenuComponent},
   { path: '', redirectTo: '/Login', pathMatch: 'full' }
 ];
 

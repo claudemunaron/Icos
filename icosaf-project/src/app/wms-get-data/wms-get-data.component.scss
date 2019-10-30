@@ -1,3 +1,65 @@
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  height: 50px;
+  margin: -3px;
+  padding: -5em;
+  display: flex;
+  align-items: center;
+  background-color: #032973;
+  color: white;
+}
+
+img {
+  height: auto;
+  width: auto;
+  max-height: 35px;
+  max-width: 250px;
+  margin-left: 0.5em;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover {
+  opacity: 0.8;
+}
+
+
+.material-icons {
+  color: white;
+  margin-right: 1em;
+  font-size: 2.3vh;
+}
+
+#left_menu {
+  margin-left: 0.7em;
+  font-size: 2.5vh;
+}
+
+.fa-sign-out {
+  color: white;
+  text-align: center;
+  font-size: 2.5vh;
+  margin-right: 0.6em;
+}
+
+.fa-chart-bar {
+  color: white;
+  margin: 1em;
+  font-size: 5vh;
+}
+
+
+
 .form-style-6{
 
   max-width: 500px;
@@ -10,6 +72,8 @@
 
 
 }
+
+
 .form-style-6 h1{
   background: #508BBF;
   padding: 20px 0;

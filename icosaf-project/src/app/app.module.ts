@@ -29,6 +29,7 @@ import { WmsInsertDataComponent } from './wms-insert-data/wms-insert-data.compon
 import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
     HomeComponent,
     TrackingComponent,
     WmsInsertDataComponent,
-    WmsGetDataComponent
+    WmsGetDataComponent,
+    IcosafMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,7 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 
   ],
-  providers: [AgvServiceService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [AgvServiceService/*, {provide: LocationStrategy, useClass: HashLocationStrategy}*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
