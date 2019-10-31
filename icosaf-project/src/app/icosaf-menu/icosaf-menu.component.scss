@@ -1,4 +1,39 @@
 
+
+/*Toolbar*/
+
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #032973;
+  color: white;
+}
+img {
+  height: 50px;
+
+
+
+}
+.material-icons {
+  color: white;
+  margin-right: 1em;
+  font-size: 2.3vh;
+}
+
+
+.fa-sign-out {
+  color: white;
+  text-align: center;
+  font-size: 2.5vh;
+  margin-right: 0.6em;
+}
+
 #wrapper {
   width: 100%;
   height: 80%;

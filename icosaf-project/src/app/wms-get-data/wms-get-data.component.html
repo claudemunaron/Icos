@@ -1,33 +1,22 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
-
     alt="Icosaf Logo"
     src="assets/icosaf.jpg"
   />
-  <i id="left_menu" class="material-icons" (click)="drawer.toggle()">
-    dehaze
-  </i>
-
-
+  <i class="fa fa-home" (click)="gomenu()"></i>
   <div class="spacer"></div>
-  <!--<button type="button" class="btn btn-warning" (click)="grafana()">Grafana</button>-->
-
   <div class="spacer"></div>
-
-
   <i (click)="logout()"
      class="fa fa-sign-out"></i>
-
-
 </div>
 
 
-<div class="form-style-6 yui3-normalized">
+<div class="form-style-6">
   <h1 class="yui3-normalized">Amount</h1>
 
   <mat-form-field>
-    <mat-label>Select Partnumber</mat-label>
+    <mat-label>Select Part Number</mat-label>
     <mat-select  [(ngModel)]="selectedPartNumber" (ngModelChange)="getAmount()">
       <mat-option *ngFor="let d of details" [value]="d.det_short_id">
         {{d.det_short_id}}</mat-option>
@@ -36,7 +25,7 @@
   </mat-form-field>
 
 
-  <input type="text" name="field2" placeholder="Amount" [(ngModel)]="amountResponse"/>
-
-  <input type="button" value="Edit"  (click)="insertPartnumber()"/>
+  <input [disabled]="!editable"  type="text" name="field2" placeholder="Amount" [(ngModel)]="amountResponse"/>
+  <input type="button" value="Edit" *ngIf="!editable" (click)="edit()"/>
+  <input type="button" value="Save" *ngIf="editable" (click)="save()"/>
 </div>

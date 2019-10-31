@@ -4,16 +4,16 @@
     </div>
 
     <div class="">
-     <h3>Sign In</h3>
+     <h3>Sign In - Icosaf</h3>
       <br>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username"
-             [ngClass]="requiredUsername  ? 'required' : ''">
+             [ngClass]="requiredUsername  ? 'required' : ''"  (focus)="clearUsername()">
     </div>
     <div class="form-group">
       <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password"
-             [ngClass]="requiredPassword  ? 'required' : ''">
+             [ngClass]="requiredPassword  ? 'required' : ''" (focus)="clearPassword()">
     </div>
     <div class="form-group">
       <button (click)="login()" class="btn btn-block">Login</button>

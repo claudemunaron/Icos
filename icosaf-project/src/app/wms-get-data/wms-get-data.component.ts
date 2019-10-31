@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AgvServiceService} from '../../api/agv-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-wms-get-data',
@@ -12,8 +13,10 @@ export class WmsGetDataComponent implements OnInit {
   details: any;
   amountResponse: any;
   selectedPartNumber = '';
+  editable = false;
 
-  constructor(private agv: AgvServiceService) { }
+  constructor(private agv: AgvServiceService, public router: Router) {
+  }
 
   ngOnInit() {
     this.getDetails();
@@ -32,6 +35,22 @@ export class WmsGetDataComponent implements OnInit {
       this.amountResponse = data[0].amount;
 
     });
+  }
+
+  gomenu() {
+    this.router.navigate(['/IcosafHome', {}]);
+  }
+
+  edit() {
+    this.editable = true;
+  }
+
+  save() {
+    this.editable = false;
+  }
+
+  logout() {
+    this.router.navigate(['/Login']);
   }
 
 }

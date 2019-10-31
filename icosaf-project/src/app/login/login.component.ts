@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../api/login.service';
 import {Router} from '@angular/router';
+import {NotifierService} from 'angular-notifier';
 
 
 @Component({
@@ -19,7 +20,10 @@ export class LoginComponent implements OnInit {
 
   elem: any;
 
-  constructor(private loginService: LoginService, public router: Router) {
+  private readonly notifier: NotifierService;
+
+  constructor(private loginService: LoginService, public router: Router, notifierService: NotifierService) {
+    this.notifier = notifierService;
   }
 
   ngOnInit() {
@@ -38,14 +42,21 @@ export class LoginComponent implements OnInit {
       return;
     } else {
 
-      this.loginService.login(this.username, this.password)
+      /*this.loginService.login(this.username, this.password)
         .subscribe(response => {
             this.responseLogin = response;
             this.checkAccess();
           },
           err => {
             // this.modalService.open(this.demoBasic);
-          });
+          });*/
+
+      if (this.username.toString() === 'icosaf' && this.password.toString() === 'icosaf') {
+        this.router.navigate(['/IcosafHome', {}]);
+      } else {
+        // this.unauthorized = true;
+        this.notifier.notify('error', 'Error:  Invalid username or password');
+      }
     }
   }
 
@@ -55,5 +66,13 @@ export class LoginComponent implements OnInit {
     } else {
       this.unauthorized = true;
     }
+  }
+
+  clearUsername() {
+    this.requiredUsername = false;
+  }
+
+  clearPassword() {
+    this.requiredPassword = false;
   }
 }

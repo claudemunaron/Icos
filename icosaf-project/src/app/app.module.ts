@@ -10,6 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NotifierModule } from 'angular-notifier';
 import {
   MatCardModule,
   MatFormFieldModule,
@@ -60,7 +61,9 @@ import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
     MatBadgeModule,
     ChartsModule,
     AngularFontAwesomeModule,
-    MatSelectModule
+    MatSelectModule,
+    NotifierModule
+
 
 
   ],

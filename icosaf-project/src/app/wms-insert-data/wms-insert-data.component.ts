@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AgvServiceService} from '../../api/agv-service.service';
+import {Router} from '@angular/router';
+import {NotifierService} from 'angular-notifier';
 
 @Component({
   selector: 'app-wms-insert-data',
@@ -10,16 +12,33 @@ export class WmsInsertDataComponent implements OnInit {
   partNumber = '';
   amount: number;
   descr = '';
+  responseInsert: any;
+  private readonly notifier: NotifierService;
 
-  constructor(private agv: AgvServiceService) { }
+  constructor(private agv: AgvServiceService, public router: Router, notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {
   }
 
   insertPartnumber() {
-   this.agv.insert(this.partNumber, this.descr, this.amount).subscribe(data => {
-   console.log(data);
-   });
+    this.agv.insert(this.partNumber, this.descr, this.amount).subscribe(data => {
+      this.responseInsert = data;
+      if (this.responseInsert.amount === this.amount && this.responseInsert.det_short_id === this.partNumber && this.responseInsert.description === this.descr) {
+        this.notifier.notify('success', 'Success: data saved');
+      } else {
+        this.notifier.notify('error', 'Error:  data are not saved correctly');
+      }
+    });
 
+  }
+
+  gomenu() {
+    this.router.navigate(['/IcosafHome', {}]);
+  }
+
+  logout() {
+    this.router.navigate(['/Login']);
   }
 }

@@ -1,6 +1,19 @@
-<div class="form-style-6 yui3-normalized">
-  <h1 class="yui3-normalized">Insert Part Number</h1>
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    alt="Icosaf Logo"
+    src="assets/icosaf.jpg"
+  />
+  <i class="fa fa-home" (click)="gomenu()"></i>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <i (click)="logout()"
+     class="fa fa-sign-out"></i>
+</div>
 
+
+<div class="form-style-6">
+  <h1 class="yui3-normalized">Insert Part Number</h1>
     <input type="text" name="field1" placeholder="Part Number" [(ngModel)]="partNumber"/>
     <input type="text" name="field2" placeholder="Amount" [(ngModel)]="amount"/>
     <textarea class = 'descrArea' name="field3" placeholder="Description" [(ngModel)]="descr"></textarea>

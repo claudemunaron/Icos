@@ -6,6 +6,7 @@ export default {
   data: 'http://digitwin.cloud.reply.eu/api/2/things/smart%3Adtwin_lwb',
   insert: 'http://icowms.cloud.reply.eu/Details/insertRecord',
   details: 'http://icowms.cloud.reply.eu/Details/details',
+  /*details: 'http://10.41.11.152:8090/Details/details',*/
   amount: 'http://icowms.cloud.reply.eu/Details/selectByDetId?det_short_id=',
   edit: ''
 };
