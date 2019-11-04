@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AgvServiceService} from '../../api/agv-service.service';
 import {Router} from '@angular/router';
+import {NotifierService} from 'angular-notifier';
 
 @Component({
   selector: 'app-wms-get-data',
@@ -14,8 +15,11 @@ export class WmsGetDataComponent implements OnInit {
   amountResponse: any;
   selectedPartNumber = '';
   editable = false;
+  responseEdit: any;
+  private readonly notifier: NotifierService;
 
-  constructor(private agv: AgvServiceService, public router: Router) {
+  constructor(private agv: AgvServiceService, public router: Router,  notifierService: NotifierService) {
+    this.notifier = notifierService;
   }
 
   ngOnInit() {
@@ -45,8 +49,19 @@ export class WmsGetDataComponent implements OnInit {
     this.editable = true;
   }
 
+
+
   save() {
     this.editable = false;
+    this.agv.edit(this.selectedPartNumber.toString(), this.amountResponse).subscribe(data => {
+      console.log(data);
+      this.responseEdit = data;
+      if (this.responseEdit.affectedRows === 1) {
+        this.notifier.notify('success', 'Success: data saved');
+      } else {
+        this.notifier.notify('error', 'Error:  data are not saved correctly');
+      }
+    });
   }
 
   logout() {

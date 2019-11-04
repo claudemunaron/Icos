@@ -25,7 +25,7 @@
   </mat-form-field>
 
 
-  <input [disabled]="!editable"  type="text" name="field2" placeholder="Amount" [(ngModel)]="amountResponse"/>
-  <input type="button" value="Edit" *ngIf="!editable" (click)="edit()"/>
+  <input [ngClass]="!editable ? 'disable': 'able'" [disabled]="!editable"  #editElement type="text" name="field2" placeholder="Amount" [(ngModel)]="amountResponse"/>
+  <input type="button" value="Edit" *ngIf="!editable" (click)="edit()"  />
   <input type="button" value="Save" *ngIf="editable" (click)="save()"/>
 </div>

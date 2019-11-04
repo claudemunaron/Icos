@@ -25,14 +25,16 @@ export class WmsInsertDataComponent implements OnInit {
   insertPartnumber() {
     this.agv.insert(this.partNumber, this.descr, this.amount).subscribe(data => {
       this.responseInsert = data;
-      if (this.responseInsert.amount === this.amount && this.responseInsert.det_short_id === this.partNumber && this.responseInsert.description === this.descr) {
+      if (this.responseInsert.amount === this.amount &&
+        this.responseInsert.det_short_id === this.partNumber && this.responseInsert.description === this.descr) {
         this.notifier.notify('success', 'Success: data saved');
       } else {
         this.notifier.notify('error', 'Error:  data are not saved correctly');
       }
     });
-
   }
+
+
 
   gomenu() {
     this.router.navigate(['/IcosafHome', {}]);
@@ -41,4 +43,5 @@ export class WmsInsertDataComponent implements OnInit {
   logout() {
     this.router.navigate(['/Login']);
   }
+
 }

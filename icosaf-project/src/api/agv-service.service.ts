@@ -96,9 +96,24 @@ export class AgvServiceService {
       .pipe(
         tap(data => {
           this.data = data;
-        })
+        }), catchError(this.errorHandler)
       );
 
+  }
+
+  edit(partNumber, amount) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+    };
+
+    return this.http.get(config.saveedit + 'amount=' + amount + '&det_short_id=' + partNumber, httpOptions)
+      .pipe(
+        tap(data => {
+          this.data = data;
+        })
+      );
   }
 
 

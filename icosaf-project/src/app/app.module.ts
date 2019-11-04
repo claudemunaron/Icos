@@ -31,6 +31,7 @@ import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
+import { LoginDTWINComponent } from './login-dtwin/login-dtwin.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
     TrackingComponent,
     WmsInsertDataComponent,
     WmsGetDataComponent,
-    IcosafMenuComponent
+    IcosafMenuComponent,
+    LoginDTWINComponent
   ],
   imports: [
     BrowserModule,

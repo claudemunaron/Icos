@@ -8,5 +8,5 @@ export default {
   details: 'http://icowms.cloud.reply.eu/Details/details',
   /*details: 'http://10.41.11.152:8090/Details/details',*/
   amount: 'http://icowms.cloud.reply.eu/Details/selectByDetId?det_short_id=',
-  edit: ''
+  saveedit: 'http://icowms.cloud.reply.eu/Details/updateAmount?'
 };

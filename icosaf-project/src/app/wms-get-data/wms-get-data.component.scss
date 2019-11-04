@@ -70,6 +70,14 @@ img {
   margin-bottom: 2em;
 }
 
+.disable{
+  background-color: #F7F7F7 !important;
+}
+
+.able{
+  box-shadow: 0 0 5px #508BBF;
+}
+
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
 .form-style-6 input[type="datetime"],
