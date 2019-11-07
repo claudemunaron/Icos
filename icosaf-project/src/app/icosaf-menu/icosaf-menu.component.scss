@@ -16,10 +16,15 @@
 }
 img {
   height: 50px;
-
-
-
 }
+
+.iconbtn{
+  height: 5em;
+ opacity: unset !important;
+}
+
+
+
 .material-icons {
   color: white;
   margin-right: 1em;
@@ -37,13 +42,22 @@ img {
 #wrapper {
   width: 100%;
   height: 80%;
-  flex-flow: column;
+  //flex-flow: column;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 button {
   min-width: 35%;
+  width: 40%;
   margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0, 0, 0, .2);
+  background-color: #f9f9f9;
+  border-radius: 10px;
 }

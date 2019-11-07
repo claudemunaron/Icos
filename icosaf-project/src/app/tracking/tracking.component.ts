@@ -75,7 +75,7 @@ export class TrackingComponent implements OnInit {
 
 
   logout() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/LoginDTWIN']);
   }
 
 
@@ -116,16 +116,12 @@ export class TrackingComponent implements OnInit {
   }
 
 
-
   refreshPath() {
     this.lineChart.chart.data.datasets.forEach((dataset) => {
       dataset.data = [];
       this.chartData = [];
-
     });
   }
-
-
 }
 
 

@@ -7,6 +7,7 @@ import {TrackingComponent} from './tracking/tracking.component';
 import {WmsGetDataComponent} from './wms-get-data/wms-get-data.component';
 import {WmsInsertDataComponent} from './wms-insert-data/wms-insert-data.component';
 import {IcosafMenuComponent} from './icosaf-menu/icosaf-menu.component';
+import {LoginDTWINComponent} from './login-dtwin/login-dtwin.component';
 
 
 const routes: Routes = [
@@ -16,13 +17,13 @@ const routes: Routes = [
   { path: 'WmsInsert', component: WmsInsertDataComponent},
   { path: 'WmsGet', component: WmsGetDataComponent},
   { path: 'IcosafHome', component: IcosafMenuComponent},
+  { path: 'LoginDTWIN', component: LoginDTWINComponent},
   { path: '', redirectTo: '/Login', pathMatch: 'full' }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
