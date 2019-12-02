@@ -1,0 +1,46 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    alt="dwin Logo"
+    src="assets/dtwin.png"
+  />
+  <div class="spacer"></div>
+  <i (click)="logout()"
+     class="fa fa-sign-out">
+  </i>
+</div>
+
+<div  class = "container">
+  <div class="carttrack"> <!-- scatter chart -->
+    <p>Prova</p>
+    <canvas baseChart
+            [datasets]="scatterChartData"
+            [options]="scatterChartOptions"
+            [chartType]="scatterChartType">
+    </canvas>
+  </div>
+  <div class="carttrack"> <!-- scatter chart -->
+    <p>Prova</p>
+    <canvas baseChart
+            [datasets]="scatterChartData"
+            [options]="scatterChartOptions"
+            [chartType]="scatterChartType">
+    </canvas>
+  </div>
+  <div class="carttrack"> <!-- scatter chart -->
+    <p>Prova</p>
+    <canvas baseChart
+            [datasets]="scatterChartData"
+            [options]="scatterChartOptions"
+            [chartType]="scatterChartType">
+    </canvas>
+  </div>
+  <div class="carttrack"> <!-- scatter chart -->
+    <p>Prova</p>
+    <canvas baseChart
+            [datasets]="scatterChartData"
+            [options]="scatterChartOptions"
+            [chartType]="scatterChartType">
+    </canvas>
+  </div>
+</div>
