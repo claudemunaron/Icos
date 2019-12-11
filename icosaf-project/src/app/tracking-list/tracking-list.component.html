@@ -3,44 +3,60 @@
   <img
     alt="dwin Logo"
     src="assets/dtwin.png"
+    (click)="home()"
   />
+
+  <i (click)="home()"
+     class=""> Home
+  </i>
   <div class="spacer"></div>
   <i (click)="logout()"
      class="fa fa-sign-out">
   </i>
 </div>
 
-<div  class = "container">
-  <div class="carttrack"> <!-- scatter chart -->
-    <p>Prova</p>
+<div *ngIf="!showDetails" class="container">
+  <div *ngFor="let i of id" class="carttrack">
+    <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="openDetail(i)">Details ID {{i}}</button>
+
+  <!-- <canvas baseChart
+            [datasets]=" i == 1 ? scatterChartData:
+             (i == 2 ? scatterChartData2: (i == 3 ? scatterChartData3: scatterChartData4))"
+            [options]="scatterChartOptions"
+            [chartType]="scatterChartType">
+    </canvas>-->
     <canvas baseChart
-            [datasets]="scatterChartData"
+            [datasets]="chartdinamic[i]"
             [options]="scatterChartOptions"
             [chartType]="scatterChartType">
     </canvas>
+
+
   </div>
-  <div class="carttrack"> <!-- scatter chart -->
-    <p>Prova</p>
-    <canvas baseChart
-            [datasets]="scatterChartData"
-            [options]="scatterChartOptions"
-            [chartType]="scatterChartType">
-    </canvas>
-  </div>
-  <div class="carttrack"> <!-- scatter chart -->
-    <p>Prova</p>
-    <canvas baseChart
-            [datasets]="scatterChartData"
-            [options]="scatterChartOptions"
-            [chartType]="scatterChartType">
-    </canvas>
-  </div>
-  <div class="carttrack"> <!-- scatter chart -->
-    <p>Prova</p>
-    <canvas baseChart
-            [datasets]="scatterChartData"
-            [options]="scatterChartOptions"
-            [chartType]="scatterChartType">
-    </canvas>
+
+
+
+</div>
+
+<div *ngIf="showDetails" class="example-sidenav-content">
+  <div class="titleContent">
+    <p class="title">Tracking</p>
+    <div  class = "selectionID">
+      <mat-form-field>
+        <mat-label>Select ID</mat-label>
+        <mat-select  (selectionChange)="openDetail($event.value)">
+          <mat-option *ngFor="let i of id" [value]="i">
+            {{i}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="carttrack">
+      <canvas baseChart
+              [datasets]="chartdinamic[selectId]"
+              [options]="scatterChartOptions"
+              [chartType]="scatterChartType">
+      </canvas>
+    </div>
   </div>
 </div>
