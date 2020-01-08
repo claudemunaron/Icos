@@ -22,6 +22,7 @@ export class TrackingListComponent implements OnInit {
   selection: number;
   showDetails = false;
   data: any;
+  nAgv: number;
 
   chartData: { x: number, y: number, z: number }[] = [];
   chartData2: { x: number, y: number, z: number }[] = [];
@@ -30,10 +31,9 @@ export class TrackingListComponent implements OnInit {
 
   chartdinamic: Array<ChartDataSets[]>;
 
-
   /* Contiene le coordinate attualmente sul grafico */
   position: { x: number, y: number, z: number };
-  id = [0, 1, 2, 3, 4];
+  id = [0, 1, 2, 3, 4, 5, 6, 7];
 
 
   layout: Layout[];
@@ -63,7 +63,6 @@ export class TrackingListComponent implements OnInit {
           stepSize: 5
         }
       }]
-
     },
   };
 
@@ -121,7 +120,6 @@ export class TrackingListComponent implements OnInit {
   public scatterChartType: ChartType = 'scatter';
 
   constructor(public router: Router, private agv: AgvServiceService) {
-    alert('prova');
     this.selectId = 0;
     this.selection = 0;
 
@@ -145,7 +143,6 @@ export class TrackingListComponent implements OnInit {
 
 
   ngOnInit() {
-
     this.updateData();
   }
 
@@ -203,9 +200,17 @@ export class TrackingListComponent implements OnInit {
   }
 
    openDetail(i) {
-    alert('openDetail '+ i)
     this.selectId = i;
     this.showDetails = true;
+  }
+
+  changeView() {
+    alert('change view' + this.nAgv);
+    this.id = [];
+    for(let i = 0; i <= this.nAgv; i++){
+      this.id.push(i);
+    }
+    alert(this.id);
   }
 
   /* = (listToget: Lift) =>*/

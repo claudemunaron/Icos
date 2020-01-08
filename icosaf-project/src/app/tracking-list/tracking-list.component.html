@@ -15,37 +15,32 @@
   </i>
 </div>
 
-<div *ngIf="!showDetails" class="container">
+
+ <!-- <mat-form-field class="example-full-width">
+    <input matInput placeholder="AGV" [value]="nAgv"  [(ngModel)]= "nAgv">
+  </mat-form-field>
+  <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="changeView()">Update</button> -->
+
+
+<div [hidden]="showDetails" class="container">
   <div *ngFor="let i of id" class="carttrack">
     <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="openDetail(i)">Details ID {{i}}</button>
-
-  <!-- <canvas baseChart
-            [datasets]=" i == 1 ? scatterChartData:
-             (i == 2 ? scatterChartData2: (i == 3 ? scatterChartData3: scatterChartData4))"
-            [options]="scatterChartOptions"
-            [chartType]="scatterChartType">
-    </canvas>-->
     <canvas baseChart
             [datasets]="chartdinamic[i]"
             [options]="scatterChartOptions"
             [chartType]="scatterChartType">
     </canvas>
-
-
   </div>
-
-
-
 </div>
 
-<div *ngIf="showDetails" class="example-sidenav-content">
+<div [hidden]="!showDetails" class="example-sidenav-content">
   <div class="titleContent">
     <p class="title">Tracking</p>
     <div  class = "selectionID">
       <mat-form-field>
         <mat-label>Select ID</mat-label>
         <mat-select  (selectionChange)="openDetail($event.value)">
-          <mat-option *ngFor="let i of id" [value]="i">
+          <mat-option *ngFor="let i of id" [value]= i>
             {{i}}
           </mat-option>
         </mat-select>
