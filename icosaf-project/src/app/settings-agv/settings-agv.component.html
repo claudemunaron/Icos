@@ -1,0 +1,23 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    alt="dwin Logo"
+    src="assets/dtwin.png"
+    (click)="home()"
+  />
+
+  <i (click)="home()"
+     class=""> Home
+  </i>
+  <div class="spacer"></div>
+
+  <i (click)="logout()"
+     class="fa fa-sign-out">
+  </i>
+</div>
+
+<H1>Settings</H1>
+<mat-form-field class="example-full-width">
+   <input matInput placeholder="AGV" [value]="nAgv"  [(ngModel)]= "nAgv">
+ </mat-form-field>
+ <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="updateAGV()">Update</button>

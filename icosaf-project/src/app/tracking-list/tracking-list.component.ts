@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {AgvServiceService} from '../../api/agv-service.service';
 import {interval} from 'rxjs';
 import {startWith, switchMap} from 'rxjs/operators';
-import {Layout} from '../../model/Layout';
+
 
 @Component({
   selector: 'app-tracking-list',
@@ -33,13 +33,8 @@ export class TrackingListComponent implements OnInit {
 
   /* Contiene le coordinate attualmente sul grafico */
   position: { x: number, y: number, z: number };
-  id = [0, 1, 2, 3, 4, 5, 6, 7];
-
-
-  layout: Layout[];
-
+  id = [];
   /*Scatter chart*/
-
   public scatterChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -122,6 +117,17 @@ export class TrackingListComponent implements OnInit {
   constructor(public router: Router, private agv: AgvServiceService) {
     this.selectId = 0;
     this.selection = 0;
+    if (localStorage.getItem('nAGV') === null) {
+      localStorage.setItem('nAGV', '' + 4);
+    }
+
+    this.nAgv = +JSON.parse(localStorage.getItem('nAGV'));
+
+    this.id = [];
+    for (let i = 0; i <= this.nAgv; i++) {
+      this.id.push(i);
+    }
+
 
     this.chartdinamic = new Array<ChartDataSets[]>();
     for (const i of this.id) {
@@ -148,7 +154,11 @@ export class TrackingListComponent implements OnInit {
 
 
   logout() {
-    this.router.navigate(['/LoginDTWIN']);
+    this.router.navigate(['/LoginDTWIN']).then(r => console.log('logout' + r));
+  }
+
+  settings() {
+    this.router.navigate(['/SettingsAGV']);
   }
 
 
@@ -199,21 +209,10 @@ export class TrackingListComponent implements OnInit {
     }
   }
 
-   openDetail(i) {
+  openDetail(i) {
     this.selectId = i;
     this.showDetails = true;
   }
-
-  changeView() {
-    alert('change view' + this.nAgv);
-    this.id = [];
-    for(let i = 0; i <= this.nAgv; i++){
-      this.id.push(i);
-    }
-    alert(this.id);
-  }
-
-  /* = (listToget: Lift) =>*/
 
   home() {
     this.showDetails = false;

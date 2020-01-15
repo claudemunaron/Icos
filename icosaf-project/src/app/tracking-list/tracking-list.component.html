@@ -10,6 +10,7 @@
      class=""> Home
   </i>
   <div class="spacer"></div>
+  <i class="fa fa-cog" (click)="settings()"></i>
   <i (click)="logout()"
      class="fa fa-sign-out">
   </i>
@@ -32,7 +33,6 @@
     </canvas>
   </div>
 </div>
-
 <div [hidden]="!showDetails" class="example-sidenav-content">
   <div class="titleContent">
     <p class="title">Tracking</p>

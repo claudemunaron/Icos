@@ -9,6 +9,7 @@ import {WmsInsertDataComponent} from './wms-insert-data/wms-insert-data.componen
 import {IcosafMenuComponent} from './icosaf-menu/icosaf-menu.component';
 import {LoginDTWINComponent} from './login-dtwin/login-dtwin.component';
 import {TrackingListComponent} from './tracking-list/tracking-list.component';
+import {SettingsAgvComponent} from './settings-agv/settings-agv.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent},
   { path: 'Tracking', component: TrackingComponent},
   { path: 'TrackingList', component: TrackingListComponent},
+  { path: 'SettingsAGV', component: SettingsAgvComponent},
   { path: 'WmsInsert', component: WmsInsertDataComponent},
   { path: 'WmsGet', component: WmsGetDataComponent},
   { path: 'IcosafHome', component: IcosafMenuComponent},

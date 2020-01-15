@@ -52,7 +52,7 @@ export class LoginDTWINComponent implements OnInit {
           });*/
 
       if (this.username.toString() === 'dtwin' && this.password.toString() === 'dtwin') {
-        this.router.navigate(['/Tracking', {}]);
+        this.router.navigate(['/TrackingList', {}]);
       } else {
         // this.unauthorized = true;
         this.notifier.notify('error', 'Error:  Invalid username or password');
@@ -60,13 +60,7 @@ export class LoginDTWINComponent implements OnInit {
     }
   }
 
-  checkAccess() {
-    if ('success' === this.responseLogin.login) {
-      this.router.navigate(['/IcosafHome', {}]);
-    } else {
-      this.unauthorized = true;
-    }
-  }
+
 
   clearUsername() {
     this.requiredUsername = false;
