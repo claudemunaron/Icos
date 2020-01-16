@@ -16,6 +16,9 @@
              [ngClass]="requiredPassword  ? 'required' : ''" (focus)="clearPassword()">
     </div>
     <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="nAgv" placeholder="Default Number AGV: 4">
+    </div>
+    <div class="form-group">
       <button (click)="login()" class="btn btn-block">Login</button>
     </div>
 

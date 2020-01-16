@@ -12,6 +12,7 @@ export class LoginDTWINComponent implements OnInit {
 
   username: string;
   password: string;
+  nAgv: string;
 
   requiredUsername = false;
   requiredPassword = false;
@@ -27,7 +28,6 @@ export class LoginDTWINComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   login() {
@@ -41,17 +41,12 @@ export class LoginDTWINComponent implements OnInit {
     if (this.requiredPassword || this.requiredUsername) {
       return;
     } else {
-
-      /*this.loginService.login(this.username, this.password)
-        .subscribe(response => {
-            this.responseLogin = response;
-            this.checkAccess();
-          },
-          err => {
-            // this.modalService.open(this.demoBasic);
-          });*/
-
       if (this.username.toString() === 'dtwin' && this.password.toString() === 'dtwin') {
+        if (Number(this.nAgv) && Number(this.nAgv) > 0) {
+          localStorage.setItem('nAGV', '' + this.nAgv);
+        } else {
+          localStorage.setItem('nAGV', '' + 4);
+        }
         this.router.navigate(['/TrackingList', {}]);
       } else {
         // this.unauthorized = true;
@@ -59,8 +54,6 @@ export class LoginDTWINComponent implements OnInit {
       }
     }
   }
-
-
 
   clearUsername() {
     this.requiredUsername = false;

@@ -1,5 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData {
+  number: string;
+
+}
 
 @Component({
   selector: 'app-settings-agv',
@@ -7,18 +14,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./settings-agv.component.scss']
 })
 export class SettingsAgvComponent implements OnInit {
-
-  constructor(public router: Router) {
-  }
-
+  number: string;
   nAgv: number;
 
+  constructor(public router: Router, public dialog: MatDialog) {
+  }
+
+
   ngOnInit() {
-    this.nAgv = +localStorage.getItem('nAGV') ;
+    this.nAgv = +localStorage.getItem('nAGV');
   }
 
   logout() {
-    this.router.navigate(['/LoginDTWIN']).then(r => console.log('logout' + r));
+    this.router.navigate(['/LoginDTWIN']);
   }
 
   home() {
@@ -29,3 +37,5 @@ export class SettingsAgvComponent implements OnInit {
     localStorage.setItem('nAGV', '' + this.nAgv);
   }
 }
+
+

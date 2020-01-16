@@ -6,6 +6,13 @@ import {Router} from '@angular/router';
 import {AgvServiceService} from '../../api/agv-service.service';
 import {interval} from 'rxjs';
 import {startWith, switchMap} from 'rxjs/operators';
+import {Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+
+export interface DialogData {
+  number: string;
+}
 
 
 @Component({
@@ -23,6 +30,7 @@ export class TrackingListComponent implements OnInit {
   showDetails = false;
   data: any;
   nAgv: number;
+  number: string;
 
   chartData: { x: number, y: number, z: number }[] = [];
   chartData2: { x: number, y: number, z: number }[] = [];
@@ -34,6 +42,8 @@ export class TrackingListComponent implements OnInit {
   /* Contiene le coordinate attualmente sul grafico */
   position: { x: number, y: number, z: number };
   id = [];
+
+
   /*Scatter chart*/
   public scatterChartOptions: ChartOptions = {
     responsive: true,
@@ -114,9 +124,10 @@ export class TrackingListComponent implements OnInit {
 
   public scatterChartType: ChartType = 'scatter';
 
-  constructor(public router: Router, private agv: AgvServiceService) {
+  constructor(public router: Router, private agv: AgvServiceService, public dialog: MatDialog) {
     this.selectId = 0;
     this.selection = 0;
+
     if (localStorage.getItem('nAGV') === null) {
       localStorage.setItem('nAGV', '' + 4);
     }
@@ -131,7 +142,6 @@ export class TrackingListComponent implements OnInit {
 
     this.chartdinamic = new Array<ChartDataSets[]>();
     for (const i of this.id) {
-
       const scatterChartData6: ChartDataSets[] = [{
         data: [],
         label: '' + i,
@@ -144,7 +154,17 @@ export class TrackingListComponent implements OnInit {
 
       this.chartdinamic.push(scatterChartData6);
     }
+  }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '250px',
+      data: {number: this.number}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.number = result;
+    });
   }
 
 
@@ -218,3 +238,33 @@ export class TrackingListComponent implements OnInit {
     this.showDetails = false;
   }
 }
+
+
+@Component({
+  selector: 'app-dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+
+export class DialogOverviewExampleDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  updateAGV() {
+    if (Number(this.data.number) && Number(this.data.number) > 0) {
+      localStorage.setItem('nAGV', '' + this.data.number);
+      window.location.reload();
+    } else {
+      localStorage.setItem('nAGV', '' + 4);
+    }
+  }
+}
+
+
+

@@ -28,11 +28,14 @@ import {ChartsModule} from 'ng2-charts';
 import { TrackingComponent } from './tracking/tracking.component';
 import { WmsInsertDataComponent } from './wms-insert-data/wms-insert-data.component';
 import { WmsGetDataComponent } from './wms-get-data/wms-get-data.component';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
 import { LoginDTWINComponent } from './login-dtwin/login-dtwin.component';
 import { TrackingListComponent } from './tracking-list/tracking-list.component';
+import { SettingsAgvComponent } from './settings-agv/settings-agv.component';
+import {MatDialogModule} from '@angular/material/dialog'
+import {DialogOverviewExampleDialogComponent} from './tracking-list/tracking-list.component';
+
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { TrackingListComponent } from './tracking-list/tracking-list.component';
     WmsGetDataComponent,
     IcosafMenuComponent,
     LoginDTWINComponent,
-    TrackingListComponent
+    TrackingListComponent,
+    SettingsAgvComponent,
+    DialogOverviewExampleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -66,11 +71,13 @@ import { TrackingListComponent } from './tracking-list/tracking-list.component';
     ChartsModule,
     AngularFontAwesomeModule,
     MatSelectModule,
-    NotifierModule
-
-
-
+    NotifierModule,
+    MatDialogModule
   ],
+  entryComponents: [
+    DialogOverviewExampleDialogComponent
+  ],
+
   providers: [AgvServiceService/*, {provide: LocationStrategy, useClass: HashLocationStrategy}*/],
   bootstrap: [AppComponent]
 })
