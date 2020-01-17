@@ -3,11 +3,10 @@
   <img
     alt="dwin Logo"
     src="assets/dtwin.png"
-    (click)="home()"
-  />
+    (click)="home()"/>
 
   <i (click)="home()"
-     class=""> Home
+     class="home"> Home
   </i>
   <div class="spacer"></div>
   <i class="fa fa-cog" (click)="openDialog()"></i>
@@ -40,8 +39,8 @@
     <div  class = "selectionID">
       <mat-form-field>
         <mat-label>Select ID</mat-label>
-        <mat-select  (selectionChange)="openDetail($event.value)">
-          <mat-option *ngFor="let i of id" [value]= i>
+        <mat-select  (selectionChange)="openDetail($event.value)" [(ngModel)]="selectId">
+          <mat-option *ngFor="let i of id"  [value]="i">
             {{i}}
           </mat-option>
         </mat-select>

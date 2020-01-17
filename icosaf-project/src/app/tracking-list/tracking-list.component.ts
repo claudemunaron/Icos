@@ -135,7 +135,7 @@ export class TrackingListComponent implements OnInit {
     this.nAgv = +JSON.parse(localStorage.getItem('nAGV'));
 
     this.id = [];
-    for (let i = 0; i <= this.nAgv; i++) {
+    for (let i = 0; i < this.nAgv; i++) {
       this.id.push(i);
     }
 

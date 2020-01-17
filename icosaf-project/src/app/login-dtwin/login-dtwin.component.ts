@@ -37,7 +37,6 @@ export class LoginDTWINComponent implements OnInit {
     if (!this.password) {
       this.requiredPassword = true;
     }
-
     if (this.requiredPassword || this.requiredUsername) {
       return;
     } else {
@@ -49,7 +48,6 @@ export class LoginDTWINComponent implements OnInit {
         }
         this.router.navigate(['/TrackingList', {}]);
       } else {
-        // this.unauthorized = true;
         this.notifier.notify('error', 'Error:  Invalid username or password');
       }
     }
