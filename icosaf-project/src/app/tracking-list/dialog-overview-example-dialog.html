@@ -1,10 +1,12 @@
-<h1 mat-dialog-title>Settings</h1>
+<h1 mat-dialog-title><i class="fa fa-cog"></i> Settings</h1>
 <div mat-dialog-content>
   <p>How many AGV?</p>
   <mat-form-field>
     <input matInput [(ngModel)]="data.number">
   </mat-form-field>
 </div>
+<mat-error *ngIf="checkInputAGV() && this.data.number!= null">*Insert a valid number</mat-error>
+<br>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Close</button>
   <button mat-button [mat-dialog-close]="data.number" (click)="updateAGV()" cdkFocusInitial>Update</button>

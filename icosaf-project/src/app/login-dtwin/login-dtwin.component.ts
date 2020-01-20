@@ -61,4 +61,10 @@ export class LoginDTWINComponent implements OnInit {
     this.requiredPassword = false;
   }
 
+  checkInputAGV() {
+    if (!Number(this.nAgv) || Number(this.nAgv) <= 0) {
+      return true;
+    }
+  }
+
 }

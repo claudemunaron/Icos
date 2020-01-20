@@ -237,6 +237,10 @@ export class TrackingListComponent implements OnInit {
   home() {
     this.showDetails = false;
   }
+
+  refreshPath() {
+    this.chartdinamic[this.selectId][0].data = [];
+  }
 }
 
 
@@ -262,6 +266,12 @@ export class DialogOverviewExampleDialogComponent {
       window.location.reload();
     } else {
       localStorage.setItem('nAGV', '' + 4);
+    }
+  }
+
+  checkInputAGV() {
+    if (!Number(this.data.number) || Number(this.data.number) <= 0) {
+      return true;
     }
   }
 }

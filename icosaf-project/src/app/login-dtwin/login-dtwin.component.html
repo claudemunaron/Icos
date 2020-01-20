@@ -25,5 +25,6 @@
     <p *ngIf=unauthorized class="error">
       * Invalid username or password
     </p>
+    <mat-error *ngIf="checkInputAGV() && this.nAgv!= null">*Insert a valid number</mat-error>
   </div>
 </div>
