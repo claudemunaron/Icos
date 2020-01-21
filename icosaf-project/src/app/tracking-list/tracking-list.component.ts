@@ -14,12 +14,12 @@ export interface DialogData {
   number: string;
 }
 
-
 @Component({
   selector: 'app-tracking-list',
   templateUrl: './tracking-list.component.html',
   styleUrls: ['./tracking-list.component.scss']
 })
+
 export class TrackingListComponent implements OnInit {
 
   @ViewChild('drawer', {static: null}) drawer: MatDrawer;
@@ -94,7 +94,6 @@ export class TrackingListComponent implements OnInit {
       lineTension: 0,
       pointBackgroundColor: 'red'
     },
-
   ];
 
   public scatterChartData3: ChartDataSets[] = [
@@ -207,8 +206,7 @@ export class TrackingListComponent implements OnInit {
           const id = this.data.features.id.properties.value;
 
           const chartPoints: ChartPoint = {x, y};
-
-          if (this.chartdinamic[id][0] && !this.chartdinamic[id][0].data.some(e => e.x === x && e.y === y)) {
+          if (this.id.includes(id) && this.chartdinamic[id][0] && !this.chartdinamic[id][0].data.some(e => e.x === x && e.y === y)){
             // @ts-ignore
             this.chartdinamic[id][0].data.push(chartPoints);
           }
