@@ -19,7 +19,8 @@
   <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="changeView()">Update</button> -->
 
 
-<div [hidden]="showDetails" class="container">
+<div [hidden]="showDetails"  [ngClass]="(nAgv===1 || nAgv ===2 ) ? 'titleContent' : 'container'">
+  <div> </div>
   <div *ngFor="let i of id" class="carttrack">
     <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="openDetail(i)">Details ID {{i}}</button>
     <canvas baseChart
