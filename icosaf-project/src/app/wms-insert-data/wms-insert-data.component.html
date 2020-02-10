@@ -16,6 +16,6 @@
   <h1 class="yui3-normalized">Insert Part Number</h1>
   <input type="text" name="field1" placeholder="Part Number" [(ngModel)]="partNumber" maxlength="25"/>
   <input type="text" name="field2" placeholder="Amount" [(ngModel)]="amount"/>
-  <textarea class='descrArea' name="field3" placeholder="Description" [(ngModel)]="descr"></textarea>
+  <textarea class='descrArea' name="field3" placeholder="Description" [(ngModel)]="descr" maxlength="250"></textarea>
   <input type="button" value="Save" (click)="insertPartnumber()"/>
 </div>
