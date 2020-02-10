@@ -1,8 +1,8 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img alt="dwin Logo"
-    src="assets/dtwin.png"
-    (click)="home()"/>
+       src="assets/dtwin.png"
+       (click)="home()"/>
 
   <i (click)="home()"
      class="home"> Home </i>
@@ -12,17 +12,10 @@
      class="fa fa-sign-out"></i>
 </div>
 
+<div [hidden]="showDetails" [ngClass]="(nAgv===1 || nAgv ===2 ) ? 'titleContent' : 'container'">
 
- <!-- <mat-form-field class="example-full-width">
-    <input matInput placeholder="AGV" [value]="nAgv"  [(ngModel)]= "nAgv">
-  </mat-form-field>
-  <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="changeView()">Update</button> -->
-
-
-<div [hidden]="showDetails"  [ngClass]="(nAgv===1 || nAgv ===2 ) ? 'titleContent' : 'container'">
-  <div> </div>
-  <div *ngFor="let i of id" class="carttrack">
-    <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="openDetail(i)">Details ID {{i}}</button>
+  <div *ngFor="let i of id" class="carttrack" [ngClass]="(nAgv ===2)? 'twoAgv' : ''">
+    <button type="button" class="btn btn-outline-info btn-sm refresh" (click)="openDetail(i)">Details AGV {{i}}</button>
     <canvas baseChart
             [datasets]="chartdinamic[i]"
             [options]="scatterChartOptions"
@@ -31,25 +24,29 @@
   </div>
 </div>
 <div [hidden]="!showDetails" class="example-sidenav-content">
+  <div class="plant">
+  </div>
   <div class="titleContent">
-    <p class="title">Tracking</p>
-    <div  class = "selectionID">
-      <mat-form-field>
-        <mat-label>Select ID</mat-label>
-        <mat-select  (selectionChange)="openDetail($event.value)" [(ngModel)]="selectId">
-          <mat-option *ngFor="let i of id"  [value]="i">
-            {{i}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="carttrack">
-      <canvas baseChart
-              [datasets]="chartdinamic[selectId]"
-              [options]="scatterChartOptions"
-              [chartType]="scatterChartType">
-      </canvas>
-      <button type="button" class="btn btn-outline-info  refresh" (click)="refreshPath()">Refresh path</button>
-    </div>
+    <div>
+      <p class="title">Tracking</p>
+      <div class="selectionID">
+        <mat-form-field>
+          <mat-label>Select AGV</mat-label>
+          <mat-select (selectionChange)="openDetail($event.value)" [(ngModel)]="selectId">
+            <mat-option *ngFor="let i of id" [value]="i">
+              {{i}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="carttrack">
+        <canvas baseChart
+                [datasets]="chartdinamic[selectId]"
+                [options]="scatterChartOptions"
+                [chartType]="scatterChartType">
+        </canvas>
+        <button type="button" class="btn btn-outline-info  refresh" (click)="refreshPath()">Refresh path</button>
+      </div>
+  </div>
   </div>
 </div>

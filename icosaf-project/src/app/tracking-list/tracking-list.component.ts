@@ -64,7 +64,7 @@ export class TrackingListComponent implements OnInit {
         display: true,
         ticks: {
           beginAtZero: true,
-          max: 50,
+          max: 100,
           stepSize: 5
         }
       }]
@@ -76,7 +76,7 @@ export class TrackingListComponent implements OnInit {
     {
       data: this.chartData,
       label: '',
-      pointRadius: 7,
+      pointRadius: 5,
       showLine: true,
       backgroundColor: 'transparent',
       lineTension: 0,
@@ -144,7 +144,7 @@ export class TrackingListComponent implements OnInit {
       const scatterChartData6: ChartDataSets[] = [{
         data: [],
         label: '' + i,
-        pointRadius: 7,
+        pointRadius: 5,
         showLine: true,
         backgroundColor: 'transparent',
         lineTension: 0,
@@ -206,7 +206,7 @@ export class TrackingListComponent implements OnInit {
           const id = this.data.features.id.properties.value;
 
           const chartPoints: ChartPoint = {x, y};
-          if (this.id.includes(id) && this.chartdinamic[id][0] && !this.chartdinamic[id][0].data.some(e => e.x === x && e.y === y)){
+          if (this.id.includes(id) && this.chartdinamic[id][0] && !this.chartdinamic[id][0].data.some(e => e.x === x && e.y === y)) {
             // @ts-ignore
             this.chartdinamic[id][0].data.push(chartPoints);
           }

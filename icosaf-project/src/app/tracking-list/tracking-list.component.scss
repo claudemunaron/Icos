@@ -32,8 +32,7 @@ p {
   padding: 0;
 }
 
-
-img {
+.toolbar img {
   margin-top: 5px;
   height: auto;
   width: auto;
@@ -76,14 +75,36 @@ img {
   text-align: center;
 }
 
+.twoAgv {
+  height: 13em !important;
+  margin: 1em auto 1em !important;
+}
+
 /*detail*/
 
 .titleContent {
   width: 100%;
+  height: 100%;
   text-align: center;
   font-size: 3vh;
+  position: relative;
 }
 
+.titleContent .chartjs-render-monitor{
+  margin-left: 9%;
+}
+
+.plant {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/plant.jpg") no-repeat center top;
+  position: absolute;
+  z-index: -1;
+  top: -8%;
+  left: -10.5%;
+  background-size: 130% 130%;
+  opacity: 0.1;
+}
 
 .title {
   margin: 0.5em;
@@ -93,19 +114,7 @@ img {
 .example-sidenav-content {
   text-align: center;
   align-content: center;
-  height: 100%;
-  width: 100%;
-  // font-size: 3vw;
 }
-
-/*.carttrack {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 50vh;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}*/
 
 .refresh {
   margin-top: 1em;
@@ -123,5 +132,57 @@ img {
 
 .mat-form-field {
   font-size: 2vh !important;
+}
+
+@media screen and (max-width: 767px) {
+
+  .titleContent .chartjs-render-monitor{
+    margin-left: 1% !important;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+
+  .titleContent .chartjs-render-monitor{
+    margin-left: 7% !important;
+  }
+
+  .plant {
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/plant.jpg") no-repeat center top;
+    position: absolute;
+    z-index: -1;
+    top: -10%;
+    left: -10%;
+    background-size: 130% 130%;
+    opacity: 0.1;
+  }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+
+  .plant {
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/plant.jpg") no-repeat center top;
+    position: absolute;
+    z-index: -1;
+    top: -9%;
+    left: -10%;
+    background-size: 130% 130%;
+    opacity: 0.1;
+  }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
 }
 
