@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WmsInsertDataComponent } from './wms-insert-data.component';
+import {WmsInsertDataComponent} from './wms-insert-data.component';
 
 describe('WmsInsertDataComponent', () => {
   let component: WmsInsertDataComponent;

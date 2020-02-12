@@ -3,7 +3,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {AgvModel} from '../../model/AgvModel';
 import {MatDrawer} from '@angular/material';
 import {Router} from '@angular/router';
-import {Chart} from 'chart.js';
 
 @Component({
   selector: 'app-home',

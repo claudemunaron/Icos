@@ -1,6 +1,5 @@
-
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {TrackingComponent} from './tracking/tracking.component';
@@ -15,13 +14,13 @@ import {SettingsAgvComponent} from './settings-agv/settings-agv.component';
 const routes: Routes = [
   { path: 'Login', component: LoginComponent},
   { path: 'Home', component: HomeComponent},
+  { path: 'WmsGet', component: WmsGetDataComponent},
+  { path: 'WmsInsert', component: WmsInsertDataComponent},
+  { path: 'IcosafHome', component: IcosafMenuComponent},
+  /*{ path: 'LoginDTWIN', component: LoginDTWINComponent},
   { path: 'Tracking', component: TrackingComponent},
   { path: 'TrackingList', component: TrackingListComponent},
-  { path: 'SettingsAGV', component: SettingsAgvComponent},
-  { path: 'WmsInsert', component: WmsInsertDataComponent},
-  { path: 'WmsGet', component: WmsGetDataComponent},
-  { path: 'IcosafHome', component: IcosafMenuComponent},
-  { path: 'LoginDTWIN', component: LoginDTWINComponent},
+  { path: 'SettingsAGV', component: SettingsAgvComponent},*/
   { path: '', redirectTo: '/Login', pathMatch: 'full' }
 ];
 

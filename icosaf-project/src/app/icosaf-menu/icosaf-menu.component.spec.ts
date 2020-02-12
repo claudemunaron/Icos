@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IcosafMenuComponent } from './icosaf-menu.component';
+import {IcosafMenuComponent} from './icosaf-menu.component';
 
 describe('IcosafMenuComponent', () => {
   let component: IcosafMenuComponent;

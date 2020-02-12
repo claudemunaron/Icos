@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LoginDTWINComponent } from './login-dtwin.component';
+import {LoginDTWINComponent} from './login-dtwin.component';
 
 describe('LoginDTWINComponent', () => {
   let component: LoginDTWINComponent;

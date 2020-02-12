@@ -4,7 +4,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDrawer} from '@angular/material';
 import {Router} from '@angular/router';
 import {AgvServiceService} from '../../api/agv-service.service';
-import {Chart, ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {BaseChartDirective} from 'ng2-charts';
 
 import {interval} from 'rxjs';

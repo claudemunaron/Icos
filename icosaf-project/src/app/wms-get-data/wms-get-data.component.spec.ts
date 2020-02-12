@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WmsGetDataComponent } from './wms-get-data.component';
+import {WmsGetDataComponent} from './wms-get-data.component';
 
 describe('WmsGetDataComponent', () => {
   let component: WmsGetDataComponent;

@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 import {NotifierService} from 'angular-notifier';
 
 
-
 @Component({
   selector: 'app-wms-insert-data',
   templateUrl: './wms-insert-data.component.html',

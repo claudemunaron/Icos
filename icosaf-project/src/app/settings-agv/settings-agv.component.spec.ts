@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SettingsAgvComponent } from './settings-agv.component';
+import {SettingsAgvComponent} from './settings-agv.component';
 
 describe('SettingsAgvComponent', () => {
   let component: SettingsAgvComponent;

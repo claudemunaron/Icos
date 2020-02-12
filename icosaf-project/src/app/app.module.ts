@@ -33,7 +33,7 @@ import { IcosafMenuComponent } from './icosaf-menu/icosaf-menu.component';
 import { LoginDTWINComponent } from './login-dtwin/login-dtwin.component';
 import { TrackingListComponent } from './tracking-list/tracking-list.component';
 import { SettingsAgvComponent } from './settings-agv/settings-agv.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatDialogModule} from '@angular/material/dialog';
 import {DialogOverviewExampleDialogComponent} from './tracking-list/tracking-list.component';
 
 
