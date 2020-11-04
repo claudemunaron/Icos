@@ -2,19 +2,15 @@
 <div class="toolbar" role="banner">
   <img
     alt="Icosaf Logo"
-    src="assets/icosaf.jpg"
-  />
+    src="assets/icosaf.jpg"/>
   <i class="fa fa-home" (click)="gomenu()"></i>
   <div class="spacer"></div>
   <div class="spacer"></div>
   <i (click)="logout()"
      class="fa fa-sign-out"></i>
 </div>
-
-
 <div class="form-style-6">
   <h1 class="yui3-normalized">Amount</h1>
-
   <mat-form-field>
     <mat-label>Select Part Number</mat-label>
     <mat-select  [(ngModel)]="selectedPartNumber" (ngModelChange)="getAmount()">
@@ -22,8 +18,6 @@
         {{d.det_short_id}}</mat-option>
     </mat-select>
   </mat-form-field>
-
-
   <input [ngClass]="!editable ? 'disable': 'able'" [disabled]="!editable"  #editElement type="text" name="field2" maxlength="15" placeholder="Amount" [(ngModel)]="amountResponse"/>
   <input type="button" value="Edit" *ngIf="!editable" (click)="edit()"  />
   <input type="button" value="Save" *ngIf="editable" (click)="save()"/>

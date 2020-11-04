@@ -9,8 +9,6 @@ import {NotifierService} from 'angular-notifier';
   styleUrls: ['./wms-get-data.component.scss']
 })
 export class WmsGetDataComponent implements OnInit {
-
-
   details: any;
   amountResponse: any;
   selectedPartNumber = '';
